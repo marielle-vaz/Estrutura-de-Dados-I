@@ -65,17 +65,21 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
     if (first == null) {
       return false;
     }
-
     ListNode<T> element = this.first;
     ListNode<T> noAnterior = this.last;
-
+    
     do {
       T currentValue = element.getValue();
 
       if (currentValue.equals(value)) {
         if (element == this.first) {
-          this.first = this.first.getNext();
-          this.last.setNext(this.first);
+          if(element == this.last){
+            this.first = null;
+            this.last = null;
+          }else{
+            this.first = this.first.getNext();
+            this.last.setNext(this.first);
+          }
         } else if (element == this.last) {
           this.last = noAnterior;
           this.last.setNext(this.first);

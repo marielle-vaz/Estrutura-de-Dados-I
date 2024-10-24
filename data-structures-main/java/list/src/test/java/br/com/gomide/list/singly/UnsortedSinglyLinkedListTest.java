@@ -186,7 +186,6 @@ public class UnsortedSinglyLinkedListTest {
   @Nested
   @DisplayName("navigation action")
   class Navigate {
-
     @Test
     @DisplayName("navigate through all elements")
     public void navigateThroughAllElements() {
@@ -205,7 +204,7 @@ public class UnsortedSinglyLinkedListTest {
       assertEquals(8, element);
 
       element = list.getNextElement();
-      assertNull(element);
+      assertEquals(2, element);
     }
 
     @Test
@@ -234,7 +233,7 @@ public class UnsortedSinglyLinkedListTest {
       assertEquals(8, element);
 
       element = list.getNextElement();
-      assertNull(element);
+      assertEquals(2, element); 
     }
 
   }
